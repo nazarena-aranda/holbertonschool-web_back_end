@@ -39,7 +39,8 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = 0, page_size: int = 10) -> dict:
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> dict:
+        """The method should return a dictionary with the following key-valu"""
         assert isinstance(index, int) and index >= 0
         indexed_data = self.indexed_dataset()
         assert index < len(indexed_data)
