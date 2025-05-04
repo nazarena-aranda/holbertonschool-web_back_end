@@ -10,7 +10,7 @@ from typing import List, Tuple
 def index_range(page, page_size) -> tuple:
     """The function should return a tuple of size"""
     start = (page - 1) * page_size
-    end = start * page_size
+    end = page * page_size
     return start, end
 
 
@@ -28,7 +28,7 @@ class Server:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-            self.__dataset = dataset[1:]  # Skip header
+            self.__dataset = dataset[1:]
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
